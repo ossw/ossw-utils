@@ -1,0 +1,66 @@
+<template>
+
+  <require from="./select-picker"></require>
+
+  <section class="au-animate">
+    <h2>Resource builder</h2>
+
+
+    <div class="form-group">
+      <label>Resource identifier</label>
+      <input type="text" class="form-control" value.two-way="resourceId"/>
+    </div>
+
+    <div class="form-group">
+      <label>Resource type</label>
+      <select-picker selected.two-way="resourceType" options.bind="resourceTypes"></select-picker>
+    </div>
+
+    <div class="form-group" if.bind="resourceType == 'imageSet'">
+      <label>First image id</label>
+      <input type="text" class="form-control" value.two-way="firstImageId">
+    </div>
+
+    <div class="form-group" if.bind="resourceType == 'imageSet'">
+      <label>Number of images</label>
+      <input type="text" class="form-control" value.two-way="numberOfImages">
+    </div>
+
+    <div class="form-group">
+      <label>Image file</label>
+
+      <div class="form-control-static">
+        <div class="btn btn-default btn-file">
+          Select a file <input type="file" id="fileInput" change.delegate="onFileSelected($event)">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" if.bind="imgPreviews.length > 0">
+      <label>Preview</label>
+
+      <div>
+          <p repeat.for="preview of imgPreviews">
+              ${preview.label}
+              <img class="preview" src="${preview.src}"/>
+          </p>
+      </div>
+    </div>
+
+    <div class="form-group" if.bind="resourceData">
+      <label>Resource definition</label>
+
+      <div class="form-control-static">
+        <div class="panel panel-default">
+          <div class="panel-body" style="word-wrap: break-word;">
+            {<br>
+            "id":&nbsp;"${resourceId}",<br>
+            "data":&nbsp;"${resourceData}"<br>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</template>
