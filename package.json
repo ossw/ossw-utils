@@ -80,10 +80,12 @@
       "aurelia-templating-router": "github:aurelia/templating-router@^0.17.0",
       "base64-js": "npm:base64-js@0.0.8",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
+      "clean-css": "npm:clean-css@^3.4.6",
       "core-js": "npm:core-js@^0.9.4",
       "css": "github:systemjs/plugin-css@^0.1.18",
       "fetch": "github:github/fetch@^0.9.0",
       "font-awesome": "npm:font-awesome@^4.3.0",
+      "jquery": "github:jquery/jquery@^2.1.4",
       "selectize": "github:brianreavis/selectize.js@0.12.1",
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
