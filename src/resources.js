@@ -226,8 +226,8 @@ export class ResourceBuilder{
         var watchData = new Array(headerSize+byteWidth*height);
         watchData[0] = 0x2; // 0x2 - image enumeration
         watchData[1] = 0; // format type
-        watchData[2] = this.firstImageId;
-        watchData[3] = this.numberOfImages;
+        watchData[2] = parseInt(this.firstImageId);
+        watchData[3] = parseInt(this.numberOfImages);
         watchData[4] = width;
         watchData[5] = height;
 
